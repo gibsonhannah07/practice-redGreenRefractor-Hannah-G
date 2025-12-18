@@ -1,16 +1,12 @@
 //function that takes a string and returns number of vowels
 
-function countVowels(str) {
-    let count = 0;
-    let vowels = "aeiouAEIOU";
+const countVowels = (str) => 
+    str.split('').filter(char => "aeiouAEIOU".includes(char)).length;
 
-    for (let char of str) {
-        if (vowels.includes(char)) {
-            count++;
-        }
-    }
-    return count;
-}
+
+console.log(countVowels("hello") === 2, '"hello" should return 2');
+    console.log(countVowels("christmastime") === 4, '"christmastime" should return 4');
+    console.log(countVowels("jkl") === 0, '"jkl" should return 0');
 
 
 //export function
